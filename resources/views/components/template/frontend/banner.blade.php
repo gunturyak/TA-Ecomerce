@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-7">
                 <div class="hero-img-wrap">
-                    <img src="{{url('/')}}/admin-assets/images/opang0.png" class="img-fluid" > 
+                    <img src="{{url('/')}}/front-assets/images/opang0.png" class="img-fluid" > 
                 </div>
             </div>
         </div>

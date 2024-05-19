@@ -11,10 +11,10 @@
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
     <!-- Bootstrap CSS -->
-    <link href="{{url('/')}}/admin-assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url('/')}}/front-assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="{{url('/')}}/admin-assets/css/tiny-slider.css" rel="stylesheet">
-    <link href="{{url('/')}}/admin-assets/css/style.css" rel="stylesheet">
+    <link href="{{url('/')}}/front-assets/css/tiny-slider.css" rel="stylesheet">
+    <link href="{{url('/')}}/front-assets/css/style.css" rel="stylesheet">
     <title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
 </head>
 
@@ -35,9 +35,9 @@
     <!-- End Footer Section -->
 
 
-    <script src="{{url('/')}}/admin-assets/js/bootstrap.bundle.min.js"></script>
-    <script src="{{url('/')}}/admin-assets/js/tiny-slider.js"></script>
-    <script src="{{url('/')}}/admin-assets/js/custom.js"></script>
+    <script src="{{url('/')}}/front-assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url('/')}}/front-assets/js/tiny-slider.js"></script>
+    <script src="{{url('/')}}/front-assets/js/custom.js"></script>
 </body>
 
 </html>

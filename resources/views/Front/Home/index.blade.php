@@ -11,13 +11,13 @@
                     <p><a href="shop.html" class="btn">Explore</a></p>
                 </div>
                 <!-- End Column 1 -->
-
+                
                 <!-- Start Column 2 -->
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                     <a class="product-item" href="cart.html">
-                        <img src="{{url('/')}}/admin-assets/images/product-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
+                        <img src="{{url('/')}}/admin-assets/images/produk-1.png" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">Original</h3>
+                        <strong class="product-price">Rp. 16.000</strong>
 
                         <span class="icon-cross">
                             <img src="{{url('/')}}/admin-assets/images/cross.svg" class="img-fluid">
@@ -29,9 +29,9 @@
                 <!-- Start Column 3 -->
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                     <a class="product-item" href="cart.html">
-                        <img src="{{url('/')}}/admin-assets/images/product-2.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
+                    <img src="{{url('/')}}/admin-assets/images/produk-1.png" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">Balado</h3>
+                        <strong class="product-price">Rp. 16.000</strong>
 
                         <span class="icon-cross">
                             <img src="{{url('/')}}/admin-assets/images/cross.svg" class="img-fluid">
@@ -43,9 +43,9 @@
                 <!-- Start Column 4 -->
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                     <a class="product-item" href="cart.html">
-                        <img src="{{url('/')}}/admin-assets/images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
+                    <img src="{{url('/')}}/admin-assets/images/produk-1.png" class="img-fluid product-thumbnail">
+                        <h3 class="product-title">Jagung Bakar</h3>
+                        <strong class="product-price">Rp. 16.000</strong>
 
                         <span class="icon-cross">
                             <img src="{{url('/')}}/admin-assets/images/cross.svg" class="img-fluid">

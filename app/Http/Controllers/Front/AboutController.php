@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -12,7 +13,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $data ['list_produk'] = Produk::all();
+        return view('Front.About.index', $data);
     }
 
     /**

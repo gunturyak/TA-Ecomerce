@@ -47,6 +47,7 @@
                                             <div class="btn-group">
                                                 <a href="" class="btn btn-dark btn-sm"><i class="fa fa-info"></i></a>
                                                 <a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                <x-button.delete id="{{ $produk->id }}" />
                                             </div>
                                         </td>
                                         <td>{{$produk->varian_produk}}</td>

@@ -30,8 +30,9 @@
 
     {!! $slot !!}
 
+    
+    <x-template.frontend.footer/>
     <!-- Start Footer Section -->
-    <x-template.frontend.footer/>>
     <!-- End Footer Section -->
 
 

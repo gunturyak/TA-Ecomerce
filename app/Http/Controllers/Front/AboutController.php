@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -11,12 +10,9 @@ class AboutController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        function index() {
-            return view('Front.About.index');
-        }
-    }
+   function index(){
+    return view('Front.About.index');
+   }
 
     /**
      * Show the form for creating a new resource.

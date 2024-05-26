@@ -15,8 +15,8 @@ Route::get('/', function () {
 
 Route::get('Home', [HomeController::class, 'index']);
 Route::get('Shop', [ShopController::class, 'index']);
-Route::get('Cart', [ChartController::class, 'index']);
 Route::get('About', [AboutController::class, 'index']);
+Route::get('Cart', [ChartController::class, 'index']);
 //Dashboard
 Route::get('Admin/Dashboard', [DashboardController::class, 'index']);
 //Produk

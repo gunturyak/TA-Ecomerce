@@ -46,9 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
-
-
+        
         <!-- Main Footer -->
         <x-template.admin.footer />
     </div>
@@ -62,7 +60,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ url('/') }}/admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('/') }}/admin-assets/dist/js/adminlte.min.js"></script>
-
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- DataTables  & Plugins -->
     <script src="{{ url('/') }}/admin-assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="{{ url('/') }}/admin-assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

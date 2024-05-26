@@ -13,11 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $data ['list_produk'] = Produk::all();
-=======
-        $data['list_produk'] = Produk::all();
->>>>>>> fbf1d1e2643fad59cbffed595047ff619dab179e
         return view('Front.Home.index', $data);
     }
 

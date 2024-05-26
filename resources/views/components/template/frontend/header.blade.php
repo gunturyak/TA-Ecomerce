@@ -14,7 +14,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('Shop') ? 'active' : ''}}"><a class="nav-link" href="{{url('Shop')}}">Shop</a></li>
                 <li class="nav-item {{ request()->is('About') ? 'active' : ''}}"><a class="nav-link" href="{{url('About')}}">About us</a></li>
-                <li class="nav-item {{ request()->is('Blog') ? 'active' : ''}}"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item {{ request()->is('Blog') ? 'active' : ''}}"><a class="nav-link" href="{{url('Blog')}}">Blog</a></li>
                 <li class="nav-item {{ request()->is('Contact') ? 'active' : ''}}"><a class="nav-link" href="contact.html">Contact us</a></li>
             </ul>
 

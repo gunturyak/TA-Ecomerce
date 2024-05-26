@@ -12,7 +12,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        
+            return view('Front.Blog.index');
+        
     }
 
     /**

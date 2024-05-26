@@ -32,9 +32,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-        <!-- Navbar -->
+        <!-- Header -->
         <x-template.admin.header />
-        <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <x-template.admin.sidebar />

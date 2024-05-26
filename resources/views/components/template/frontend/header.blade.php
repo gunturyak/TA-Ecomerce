@@ -1,7 +1,7 @@
 <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
     <div class="container">
-        <a class="navbar-brand" href="index.html">Opang<span>.CO</span></a>
+        <a class="navbar-brand" href="{{url('Home')}}">Opang<span>.CO</span></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarsFurni">
             <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                 <li class="nav-item {{ request()->is('Home') ? 'active' : ''}}">
-                    <a class="nav-link " href="{{url('Home')}}l">Home</a>
+                    <a class="nav-link " href="{{url('Home')}}">Home</a>
                 </li>
                 <li class="nav-item {{ request()->is('Shop') ? 'active' : ''}}"><a class="nav-link" href="{{url('Shop')}}">Shop</a></li>
                 <li class="nav-item {{ request()->is('About') ? 'active' : ''}}"><a class="nav-link" href="{{url('About')}}">About us</a></li>

@@ -13,8 +13,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $data ['list_produk'] = Produk::all();
-        return view('Front.About.index', $data);
+        function index() {
+            return view('Front.About.index');
+        }
     }
 
     /**

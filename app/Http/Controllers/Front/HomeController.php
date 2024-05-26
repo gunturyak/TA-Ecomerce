@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['list_produk'] = Produk::all();
+        $data ['list_produk'] = Produk::all();
         return view('Front.Home.index', $data);
     }
 

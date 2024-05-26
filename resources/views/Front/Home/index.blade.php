@@ -11,48 +11,20 @@
                     <p><a href="shop.html" class="btn">Explore</a></p>
                 </div>
                 <!-- End Column 1 -->
-                
-                <!-- Start Column 2 -->
+                @foreach ($list_produk as $produk)
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
+                    <a class="product-item" href="{{url('Cart')}}">
                         <img src="{{url('/')}}/front-assets/images/produk-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Original</h3>
-                        <strong class="product-price">Rp. 16.000</strong>
+                        <h3 class="product-title">{{$produk->varian_produk}}</h3>
+                        <strong class="product-price">{{$produk->harga_produk}}</strong>
 
                         <span class="icon-cross">
                             <img src="{{url('/')}}/front-assets/images/cross.svg" class="img-fluid">
                         </span>
                     </a>
-                </div>
-                <!-- End Column 2 -->
-
-                <!-- Start Column 3 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
-                    <img src="{{url('/')}}/front-assets/images/produk-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Balado</h3>
-                        <strong class="product-price">Rp. 16.000</strong>
-
-                        <span class="icon-cross">
-                            <img src="{{url('/')}}/front-assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 3 -->
-
-                <!-- Start Column 4 -->
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                    <a class="product-item" href="cart.html">
-                    <img src="{{url('/')}}/front-assets/images/produk-1.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">Jagung Bakar</h3>
-                        <strong class="product-price">Rp. 16.000</strong>
-
-                        <span class="icon-cross">
-                            <img src="{{url('/')}}/front-assets/images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <!-- End Column 4 -->
+                </div> 
+                @endforeach
+                <!-- Start Column 2 -->
 
             </div>
         </div>

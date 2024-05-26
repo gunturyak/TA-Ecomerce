@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProdukController;
+use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\ChartController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
@@ -15,6 +16,7 @@ Route::get('/', function () {
 Route::get('Home', [HomeController::class, 'index']);
 Route::get('Shop', [ShopController::class, 'index']);
 Route::get('Cart', [ChartController::class, 'index']);
+Route::get('About', [AboutController::class, 'index']);
 //Dashboard
 Route::get('Admin/Dashboard', [DashboardController::class, 'index']);
 //Produk

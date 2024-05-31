@@ -23,6 +23,7 @@ Route::get('Blog', [BlogController::class, 'index']);
 Route::get('Admin/Dashboard', [DashboardController::class, 'index']);
 //Produk
 Route::get('Admin/Produk', [ProdukController::class, 'index']);
+Route::resource('Admin/Produk', ProdukController::class);
 Route::delete('Admin/Produk{produk}', [ProdukController::class, 'destroy']);
 //Data-Produk
 Route::get('Admin/Data-Produk', [ProdukController::class, 'data']);

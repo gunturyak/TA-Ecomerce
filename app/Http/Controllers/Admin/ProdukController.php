@@ -75,7 +75,7 @@ class ProdukController extends Controller
         $produk = Produk::find($id);
         if (request('nama_produk')) $produk->nama_produk = request('nama_produk');
         if (request('deskripsi_produk')) $produk->deskripsi_produk = request('deskripsi_produk');
-        if (request('varian_produk')) $produk->varian_produk = 'Original';
+        if (request('varian_produk')) $produk->varian_produk = request('varian_produk');
         if (request('harga_produk')) $produk->harga_produk = request('harga_produk');
         if (request('stok_produk')) $produk->stok_produk = request('stok_produk');
         $produk->save();

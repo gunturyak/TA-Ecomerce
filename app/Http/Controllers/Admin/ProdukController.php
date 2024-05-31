@@ -37,7 +37,7 @@ class ProdukController extends Controller
         $produk = new Produk();
         $produk->nama_produk = $request->input('nama_produk');
         $produk->stok_produk = $request->input('stok_produk');
-        $produk->varian_produk = 'Original';
+        $produk->varian_produk = $request->input('varian_produk');
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
         $produk->harga_produk = $request->input('harga_produk');
         $produk->save();

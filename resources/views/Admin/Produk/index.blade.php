@@ -24,7 +24,7 @@
                                     <h3 class="card-title">Produk</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a href="{{ url('Admin/Produk/create') }}" class="btn btn-dark">Tambah
+                                    <a href="{{ url('Admin/Produk/create') }}" class="btn btn-sm btn-dark">Tambah
                                         Produk</a>
                                 </div>
                             </div>

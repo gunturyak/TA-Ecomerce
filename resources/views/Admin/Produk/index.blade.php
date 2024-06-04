@@ -24,7 +24,7 @@
                                     <h3 class="card-title">Produk</h3>
                                 </div>
                                 <div class="col-md-2">
-                                    <a href="{{ url('Admin/Produk/create') }}" class="btn btn-dark">Tambah
+                                    <a href="{{ url('Admin/Produk/create') }}" class="btn btn-sm btn-dark">Tambah
                                         Produk</a>
                                 </div>
                             </div>
@@ -45,9 +45,16 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="" class="btn btn-dark btn-sm"><i class="fa fa-info"></i></a>
-                                                <a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                                <x-button.delete id="{{ $produk->id }}" />
+                                                <a href="{{ url('Admin/Produk', $produk->id) }}" class="btn btn-dark btn-sm"><i class="fa fa-info"></i></a>
+                                                <a href="{{ url('Admin/Produk/' . $produk->id . '/edit') }}" class="btn btn-warning btn-sm">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                {{-- <x-button.delete id="{{ $produk->id }}" /> --}}
+                                                    <form action="{{ url('Admin/Produk', $produk->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger btn-tone"><i class="fas fa-trash"></i></button>
+                                                    </form>
                                             </div>
                                         </td>
                                         <td>{{$produk->varian_produk}}</td>

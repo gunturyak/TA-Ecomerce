@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\ProdukCarousel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -9,7 +10,12 @@ use Illuminate\Support\Str;
 class Produk extends Model
 {
     protected $table = 'produk';
-    protected $fillable = ['id', 'nama_produk', 'harga_produk', 'stok_produk', 'deskripsi_produk', 'varian_produk', 'foto_produk'];
+    protected $fillable = ['nama_produk', 'harga_produk', 'stok_produk', 'deskripsi_produk', 'varian_produk', 'foto_produk'];
+
+    public function carousels()
+    {
+        return $this->hasMany(ProdukCarousel::class, 'id_produk');
+    }
     function handleUploadFoto()
     {
 

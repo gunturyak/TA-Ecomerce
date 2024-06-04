@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Produk;
+use App\Models\ProdukCarousel as ModelsProdukCarousel;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -39,27 +40,31 @@ class ProdukController extends Controller
         $produk->varian_produk = $request->input('varian_produk');
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
         $produk->harga_produk = $request->input('harga_produk');
-
-        $produk->handleUploadFoto();
         $produk->save();
 
-        return redirect('Admin/produk')->with('success', 'Data Berhasil di Tambahkan.');
+        $id_produk = $produk->id;
+        $produk = new ModelsProdukCarousel();
+        $produk->handleUploadImage($id_produk);
+
+        return redirect('Admin/Produk')->with('success', 'Data Berhasil di Tambahkan.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($produk)
     {
-        //
+        $produk = Produk::find($produk);
+        return view('Admin.Produk.Show', compact('produk'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($produk)
     {
-        //
+        $produk = Produk::find($produk);
+        return view('Admin.Produk.edit', compact('produk'));
     }
 
     /**
@@ -67,16 +72,32 @@ class ProdukController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $produk = Produk::find($id);
+        if (request('nama_produk')) $produk->nama_produk = request('nama_produk');
+        if (request('deskripsi_produk')) $produk->deskripsi_produk = request('deskripsi_produk');
+        if (request('varian_produk')) $produk->varian_produk = request('varian_produk');
+        if (request('harga_produk')) $produk->harga_produk = request('harga_produk');
+        if (request('stok_produk')) $produk->stok_produk = request('stok_produk');
+        $produk->save();
+
+        if (request('gambar'))
+        $id_produk = $produk->id;
+        $produk = new ModelsProdukCarousel();
+        $produk->handleUploadImage($id_produk);
+
+        return redirect('Admin/Produk')->with('success', 'Data Berhasil di Edit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy( Produk $produk)
+    function destroy($id)
     {
+        $produk = Produk::find($id);
+        $produk->handleDelete();
+        $carousel = new ModelsProdukCarousel();
+        $carousel->handleDeleteImage($produk->id);
         $produk->delete();
-
-        return redirect('Admin/Dashboard')->with('danger', 'Data Berhasil Dihapus');
+        return redirect('Admin/Produk')->with('danger', 'Data Berhasil Dihapus');
     }
 }

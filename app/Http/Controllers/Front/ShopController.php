@@ -8,15 +8,11 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data['list_produk'] = Produk::all();
-        return view('Front.Shop.Index', $data);
+        return view('Front.Shop.index', $data);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -36,9 +32,9 @@ class ShopController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return view('front.shop.detail');
     }
 
     /**

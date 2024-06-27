@@ -126,7 +126,6 @@
                                     <div class="px-4 rounded-bottom">
                                         <div class="service-content bg-primary text-center p-4 rounded">
                                             <h5 class="text-white">Balado</h5>
-
                                         </div>
                                     </div>
                                 </div>

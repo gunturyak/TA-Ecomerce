@@ -25,18 +25,10 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <h4 class="fw-bold mb-3">Brocoli</h4>
-                            <p class="mb-3">Category: Vegetables</p>
-                            <h5 class="fw-bold mb-3">3,35 $</h5>
-                            <div class="d-flex mb-4">
-                                <i class="fa fa-star text-secondary"></i>
-                                <i class="fa fa-star text-secondary"></i>
-                                <i class="fa fa-star text-secondary"></i>
-                                <i class="fa fa-star text-secondary"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p class="mb-4">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
-                            <p class="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish</p>
+
+
+                            <p class="mb-4">Rasakan kenikmatan keripik gurih Opak Udang. Dibuat dari bahan berkualitas tinggi dan udang segar pilihan, Opak Udang memberikan sensasi rasa yang renyah dan lezat di setiap gigitan. Ideal sebagai camilan atau pelengkap hidangan, Opak Udang adalah pilihan sempurna untuk setiap kesempatan.</p>
+
                             <div class="input-group quantity mb-5" style="width: 100px;">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-minus rounded-circle bg-light border">
@@ -56,15 +48,20 @@
                             <nav>
                                 <div class="nav nav-tabs mb-3">
                                     <button class="nav-link active border-white border-bottom-0" type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" aria-controls="nav-about" aria-selected="true">Description</button>
-                                    <button class="nav-link border-white border-bottom-0" type="button" role="tab" id="nav-mission-tab" data-bs-toggle="tab" data-bs-target="#nav-mission" aria-controls="nav-mission" aria-selected="false">Reviews</button>
+
                                 </div>
                             </nav>
                             <div class="tab-content mb-5">
                                 <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                    <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.
-                                        Susp endisse ultricies nisi vel quam suscipit </p>
-                                    <p>Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish filefish Antarctic
-                                        icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish, electric ray sweeper.</p>
+                                    <p>Opak udang merupakan makanan yang berasal dari campuran ubi dan udang yang digiling dan di bumbui dengan bahan yang lain,dan memiliki beberapa keunggulan
+                                        Renyah dan Lezat: Proses pengolahan yang hati-hati memastikan setiap potongan opak memiliki tekstur yang renyah dan rasa udang yang gurih.
+                                        Bahan Alami: Dibuat dari udang segar dan ubi berkualitas tanpa tambahan pengawet dan pewarna buatan, menjadikannya pilihan camilan yang sehat dan aman.
+                                        Kaya Protein: Sumber protein yang baik dari udang, memberikan nilai gizi tambahan di setiap gigitannya.
+                                        Praktis dan Higienis: Dikemas dalam bungkus yang praktis dan higienis, mudah dibawa ke mana saja dan dinikmati kapan saja.
+                                        Harga Terjangkau: Dengan harga hanya Rp. 16.000 per bungkus, Opak Udang adalah pilihan camilan yang lezat dan ekonomis.
+
+                                    </p>
+
                                     <div class="px-2">
                                         <div class="row g-4">
                                             <div class="col-6">
@@ -73,15 +70,15 @@
                                                         <p class="mb-0">Weight</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p class="mb-0">1 kg</p>
+                                                        <p class="mb-0">100 gr</p>
                                                     </div>
                                                 </div>
                                                 <div class="row text-center align-items-center justify-content-center py-2">
                                                     <div class="col-6">
-                                                        <p class="mb-0">Country of Origin</p>
+                                                        <p class="mb-0">Varian</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p class="mb-0">Agro Farm</p>
+                                                        <p class="mb-0">Original,Balado Dan Jagung bakar</p>
                                                     </div>
                                                 </div>
                                                 <div class="row bg-light text-center align-items-center justify-content-center py-2">
@@ -158,47 +155,17 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="#">
-                            <h4 class="mb-5 fw-bold">Leave a Reply</h4>
-                            <div class="row g-4">
-                                <div class="col-lg-6">
-                                    <div class="border-bottom rounded">
-                                        <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="border-bottom rounded">
-                                        <input type="email" class="form-control border-0" placeholder="Your Email *">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="border-bottom rounded my-4">
-                                        <textarea name="" id="" class="form-control border-0" cols="30" rows="8" placeholder="Your Review *" spellcheck="false"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="d-flex justify-content-between py-3 mb-5">
-                                        <div class="d-flex align-items-center">
-                                            <p class="mb-0 me-3">Please rate:</p>
-                                            <div class="d-flex align-items-center" style="font-size: 12px;">
-                                                <i class="fa fa-star text-muted"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3"> Post Comment</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+
                     </div>
                 </div>
-
             </div>
-
+            </form>
         </div>
+    </div>
+
+    </div>
+
+    </div>
     </div>
     <!-- Single Product End -->
 </x-frontend>

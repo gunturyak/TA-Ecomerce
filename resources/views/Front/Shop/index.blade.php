@@ -95,55 +95,44 @@
                                 <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                             </div>
                         </div>
-                        <div class="col-6"></div>
-                        <div class="col-xl-3">
-                            <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
-                                <label for="fruits">Default Sorting:</label>
-                                <select id="fruits" name="fruitlist" class="border-0 form-select-sm bg-light me-3" form="fruitform">
-                                    <option value="volvo">Nothing</option>
-                                    <option value="saab">Popularity</option>
-                                    <option value="opel">Organic</option>
-                                    <option value="audi">Fantastic</option>
-                                </select>
-                            </div>
-                        </div>
+
                     </div>
-                    <div class="row g-4">
+                </div>
+            </div>
+            <div class="row g-4">
 
-                        <div class="col-lg-12 pt-5">
-                            <div class="row g-4 justify-content-center">
-                                @foreach($list_produk as $produk)
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <a href="{{url('shop-detail')}}">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="{{asset('$produk->foto')}}" class="img-fluid rounded-top w-100" alt="">
-                                            </div>
+                <div class="col-lg-12 pt-5">
+                    <div class="row g-4 justify-content-center">
+                        @foreach($list_produk as $produk)
+                        <div class="col-md-6 col-lg-6 col-xl-4">
+                            <a href="{{url('shop-detail')}}">
+                                <div class="rounded position-relative fruite-item">
+                                    <div class="fruite-img">
+                                        <img src="{{asset('$produk->foto')}}" class="img-fluid rounded-top w-100" alt="">
+                                    </div>
 
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>{{$produk->varian_produk}}</h4>
+                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                        <h4>{{$produk->varian_produk}}</h4>
 
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                        <div class="d-flex justify-content-between flex-lg-wrap">
 
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Rp. {{$produk->harga_produk}}</p>
-                                                    <form action="{{ route('add-to-cart') }}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{$produk->id}}">
-                                                        <a href="" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                @endforeach
-
-                                <div class="col-md-6 col-lg-6 col-xl-4">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. {{$produk->harga_produk}}</p>
+                                            <form action="{{ route('add-to-cart') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{$produk->id}}">
+                                                <a href="" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                            </form>
                                         </div>
                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+
+                        <div class="col-md-6 col-lg-6 col-xl-4">
+                            <div class="rounded position-relative fruite-item">
+                                <div class="fruite-img">
+                                    <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
                                 </div>
                             </div>
                         </div>
@@ -151,6 +140,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     </div>
     </div>

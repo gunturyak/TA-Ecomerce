@@ -20,7 +20,7 @@ class ChartController extends Controller
         } else {
             $product = Produk::find($produkId);
             $cart[$produkId] = [
-                "name" => $product->varian_produk,
+                "name" => $product->nama_produk,
                 "price" => $product->harga_produk,
                 "quantity" => 1
             ];
@@ -30,6 +30,7 @@ class ChartController extends Controller
 
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan ke keranjang!');
     }
+
     /**
      * Display a listing of the resource.
      */

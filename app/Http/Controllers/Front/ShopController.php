@@ -26,7 +26,18 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produk = new Produk();
+        $produk->nama_produk = $request->nama_produk;
+        $produk->harga_produk = $request->harga_produk;
+        $produk->stok_produk = $request->stok_produk;
+        $produk->deskripsi_produk = $request->deskripsi_produk;
+        $produk->varian_produk = $request->varian_produk;
+        $produk->handleUploadFoto();
+        $produk->save();
+
+        // Mengarahkan ke halaman ChartController untuk menambahkan produk ke keranjang
+        return redirect()->route('chart.addToCart', ['id' => $produk->id])
+            ->with('success', 'Produk berhasil ditambahkan dan siap ditambahkan ke keranjang!');
     }
 
     /**

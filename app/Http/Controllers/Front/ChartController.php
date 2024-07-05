@@ -10,38 +10,53 @@ class ChartController extends Controller
 {
     public function addToCart(Request $request)
     {
-        $produkId = $request->input('id');
+        $product = Produk::find($request->id);
+        $quantity = $request->quantity;
 
-        // Logika untuk menambahkan produk ke keranjang, misalnya menggunakan sesi atau tabel database
+        if (!$product) {
+            return redirect()->back()->with('error', 'Product not found');
+        }
+
         $cart = session()->get('cart', []);
 
-        if (isset($cart[$produkId])) {
-            $cart[$produkId]['quantity']++;
+        if (isset($cart[$product->id])) {
+            $cart[$product->id]['quantity'] += $quantity;
         } else {
-            $product = Produk::find($produkId);
-            $cart[$produkId] = [
-                "name" => $product->nama_produk,
+            $cart[$product->id] = [
+                "name" => $product->varian_produk,
+                "quantity" => $quantity,
                 "price" => $product->harga_produk,
-                "quantity" => 1
+                "image" => $product->carousels->first()->gambar
             ];
         }
 
         session()->put('cart', $cart);
-
-        return redirect()->back()->with('success', 'Produk berhasil ditambahkan ke keranjang!');
+        return redirect()->route('cart')->with('success', 'Product added to cart successfully!');
     }
 
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('Front.Keranjang.index');
+        $cart = session()->get('cart', []);
+        $subtotal = array_sum(array_map(function ($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+        $shipping = 2500; // Contoh biaya pengiriman flat rate
+        $total = $subtotal + $shipping;
+
+        return view('Front.Keranjang.index', compact('cart', 'subtotal', 'total'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function removeFromCart($id)
+    {
+        $cart = session()->get('cart');
+
+        if (isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->back()->with('success', 'Product removed successfully!');
+    }
     public function create()
     {
         //

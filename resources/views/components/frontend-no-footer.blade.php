@@ -44,8 +44,7 @@
 
     {{$slot}}
 
-    <!-- Footer Start -->
-    <x-template.frontend.footer />
+
     <!-- Footer End -->
 
     <!-- Copyright Start -->

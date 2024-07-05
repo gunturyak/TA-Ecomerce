@@ -19,5 +19,8 @@ Route::prefix('/')->group(function () {
 });
 
 Route::post('/add-to-cart', [ChartController::class, 'addToCart'])->name('add-to-cart');
-Route::get('Cart', [ChartController::class, 'index']);
+Route::get('Cart', [ChartController::class, 'index'])->name('cart');
+Route::post('/remove-from-cart/{id}', [ChartController::class, 'removeFromCart'])->name('remove-from-cart');
+Route::patch('/cart/update', [ChartController::class, 'updateQuantity'])->name('cart.update');
+
 Route::get('Contact', [ContactController::class, 'index']);

@@ -40,7 +40,7 @@
                                     <th>Stok</th>
                                 </thead>
                                 <tbody>
-                                    @foreach ($list_produk as $produk)   
+                                    @foreach ($list_produk as $produk)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>
@@ -50,15 +50,17 @@
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                                 {{-- <x-button.delete id="{{ $produk->id }}" /> --}}
-                                                    <form action="{{ url('Admin/Produk', $produk->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button class="btn btn-danger btn-tone"><i class="fas fa-trash"></i></button>
-                                                    </form>
+                                                <form action="{{ url('Admin/Produk', $produk->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger btn-tone"><i class="fas fa-trash"></i></button>
+                                                </form>
                                             </div>
                                         </td>
                                         <td>{{$produk->varian_produk}}</td>
-                                        <td>{{$produk->stok_produk}}</td>
+                                        <td> <span data-url="{{ url('Admin/Produk', $produk->id) }}" id="stokProduk_{{ $produk->id }}" data-original-value="{{ $produk->stok_produk }}">{{ $produk->stok_produk }}</span>
+                                            <a onclick="editStokProduk({{ $produk->id }})"><i class="fa fa-edit btn-xs" style="float: right; "></i></a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -94,4 +96,46 @@
             "responsive": true,
         });
     });
+
+    function editStokProduk(produkId) {
+        var spanStokProduk = document.getElementById('stokProduk_' + produkId);
+        var currentStokProduk = spanStokProduk.textContent;
+        var actionUrl = spanStokProduk.dataset.url;
+
+        var formHTML = `
+        <form action="${actionUrl}" method="post">
+            @csrf
+            @method('PUT')
+            <input type="number" class="form-control" name="stok_produk" value="${currentStokProduk}">
+            <br>
+            <div class="button-group pull-right">
+                <a href="#" class="btn btn-sm btn-outline-danger mt-1" onclick="cancelEditStokProduk(event, ${produkId})">Batal</a>
+                <button class="btn btn-sm btn-outline-success mt-1" type="submit"><i class="fa fa-save"></i> Simpan</button>
+            </div>
+        </form>
+    `;
+
+        spanStokProduk.innerHTML = formHTML;
+
+        // Hilangkan tombol edit saat form muncul
+        var editLink = spanStokProduk.nextElementSibling;
+        if (editLink) {
+            editLink.style.display = 'none';
+        }
+    }
+
+    function cancelEditStokProduk(event, produkId) {
+        event.preventDefault();
+
+        var spanStokProduk = document.getElementById('stokProduk_' + produkId);
+        var originalValue = spanStokProduk.dataset.originalValue;
+
+        spanStokProduk.innerHTML = originalValue;
+
+        // Tambahkan kembali tombol Edit
+        var editLink = spanStokProduk.nextElementSibling;
+        if (editLink) {
+            editLink.style.display = 'inline';
+        }
+    }
 </script>

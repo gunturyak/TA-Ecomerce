@@ -19,7 +19,6 @@
     </div>
     <!-- Modal Search End -->
 
-
     <!-- Hero Start -->
     <div class="container-fluid py-5 mb-5 hero-header">
         <div class="container py-5">
@@ -46,12 +45,6 @@
                 </div>
             </div>
             <!-- Hero End -->
-
-
-            <!-- Featurs Section Start -->
-
-            <!-- Featurs Section End -->
-
 
             <!-- Fruits Shop Start-->
             <div class="container-fluid fruite py-5">
@@ -114,9 +107,9 @@
             </div>
             <!-- Fruits Shop End-->
 
-
             <!-- Featurs Start -->
-            <div class="container-fluid service">
+
+            <!-- <div class="container-fluid service">
                 <div class="container">
                     <div class="row g-4 justify-content-center">
                         <div class="col-md-6 col-lg-4">
@@ -160,7 +153,125 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Featurs End -->
+        </div>
+    </div>
+    <div class="section" style="">
+        <div class="section-body">
+            <div class="product-catalog grid">
+                <div class="p-3 " style="background-color: #43AA34;color:#fff;">
+                    <div class="media-absolute">
+                        <!-- <img class=" ls-is-cached lazyloaded" data-src="/media/2023/09/05/e1df1e9c-5d34-4cdc-9fe1-f52f2ec5f863.png" alt="Kusuka" src="/media/2023/09/05/e1df1e9c-5d34-4cdc-9fe1-f52f2ec5f863.png">
+                        <img class=" ls-is-cached lazyloaded" data-src="/media/2023/09/05/deb67ec3-93ab-4ca4-b695-2d73deaf71aa.png" alt="Kusuka" src="/media/2023/09/05/deb67ec3-93ab-4ca4-b695-2d73deaf71aa.png"> -->
+                    </div>
+                    <div class="media-dialog section-dialog container lg:flex">
+                        <div class="media-image">
+                            <img class="ls-is-cached lazyloaded" style="height: 400px; margin-top: 50px;" src="{{url('/')}}/front/img/opang a.png">
+                        </div>
+                        <div class="media-body flex-1">
+                            <h1>OPANG Original Chips</h1>
+                            <div class="content">
+                                <p>
+                                    Made only from quality ingredients, the crunchy and delicious KUSUKA Cassava Chips are a favorite for everyone who tries! Available in various flavors
+                                </p>
+                                <div class="mt-6 lg:mt-8">
+                                    <a href="{{ route('shop-detail', ['produk' => 'Original']) }}" class="btn btn-primary">Detail Product</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <div class="p-3" style="background-color: #F7BE28;color:#fff;">
+                            <div class="media-absolute">
+                                <img class=" ls-is-cached lazyloaded" data-src="/media/2023/09/27/d514b291-841c-4176-ba52-eb7c4548ac83.png" alt="" src="/media/2023/09/27/d514b291-841c-4176-ba52-eb7c4548ac83.png">
+                            </div>
 
+                            <div class="media-dialog section-dialog container lg:flex">
+                                <div class="media-image-bottom jagung-bakar">
+                                    <img class="ls-is-cached lazyloaded jagung-bakar" style="height: 400px; padding-inline:30px; transform: rotate(-10deg);" alt="" src="{{url('/')}}/front/img/opang a.png">
+                                </div>
+                                <div class=" media-body flex-1">
+                                    <h3>OPANG Jagung Bakar Chips</h3>
+                                    <div class="content">
+                                        <p>
+                                            Gives you an experience of Indonesian chips, emping, made from gnetum gnemon known as melinjo. To create a tasty emping, we choose a high quality meli
+                                        </p>
+                                        <div class="mt-6 lg:mt-8">
+                                            <a href="{{ route('shop-detail', ['produk' => 'Jagun Bakar']) }}" class="btn btn-primary">Detail Product</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3" style="background-color: #AC1120;color:#fff;">
+                            <div class="media-absolute">
+                                <img class=" ls-is-cached lazyloaded" data-src="/media/2023/09/29/3fb993ed-c9ef-422d-9be4-d6913967c95c.png" alt="" src="/media/2023/09/29/3fb993ed-c9ef-422d-9be4-d6913967c95c.png">
+                            </div>
+
+                            <div class="media-dialog section-dialog container lg:flex">
+                                <div class="media-image-bottom">
+                                    <img class=" ls-is-cached lazyloaded " style="height: 400px;  transform: rotate(10deg);" src="{{url('/')}}/front/img/opang a.png">
+                                </div>
+                                <div class="media-body flex-1">
+                                    <h3>OPANG Balado Chips</h3>
+                                    <div class="content">
+                                        <p>
+                                            Are you sure can handle our hotness? KUSUKA Topping delivers you a bold of spiciness, lingering a hint of
+                                        </p>
+                                        <div class="mt-6 lg:mt-8">
+                                            <a href="{{ route('shop-detail', ['produk' => 'Balado']) }}" class="btn btn-primary">Detail Product</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <style>
+        .media-dialog {
+            display: flex;
+            align-items: center;
+        }
+
+        .media-image {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            height: 65vh;
+        }
+
+        .media-image-bottom {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            height: 60vh;
+        }
+
+        .media-body {
+            flex: 1 1 auto;
+        }
+
+        .media-image img {
+            max-width: 100%;
+            /* Make sure the image fits its container */
+            transform: rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.8));
+
+        }
+
+        .media-image-bottom img {
+            max-width: 100%;
+            /* Make sure the image fits its container */
+            transform: rotate(10deg);
+            filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.8));
+        }
+    </style>
 </x-frontend>

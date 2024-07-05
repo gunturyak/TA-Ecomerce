@@ -1,11 +1,14 @@
 <x-frontend>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Shop Detail</h1>
+        <h1 class="text-center text-white display-6">Shope Detail</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop Detail</li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{url('shop')}}">Shope</a></li>
+            <li class="breadcrumb-item active text-white">Shope Detail</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
@@ -19,31 +22,54 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="border rounded">
-                                <a href="#">
-                                    <img src="{{url('/')}}/front/gambar/opangc.PNG" class="img-fluid rounded" alt="Image">
-                                </a>
+                                <div id="carousel-{{ $produk->id }}" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @foreach($produk->carousels as $index => $carousel)
+                                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                            <img src="{{ asset($carousel->gambar) }}" class="img-fluid rounded-top w-100" alt="">
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carousel-{{ $produk->id }}" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel-{{ $produk->id }}" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-
-
-                            <p class="mb-4">Rasakan kenikmatan keripik gurih Opak Udang. Dibuat dari bahan berkualitas tinggi dan udang segar pilihan, Opak Udang memberikan sensasi rasa yang renyah dan lezat di setiap gigitan. Ideal sebagai camilan atau pelengkap hidangan, Opak Udang adalah pilihan sempurna untuk setiap kesempatan.</p>
-
-                            <div class="input-group quantity mb-5" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
+                            <p class="mb-4">Rasakan kenikmatan keripik gurih Opak Udang...</p>
+                            @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
                             </div>
-                            <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                            @endif
+                            <form action="{{ route('add-to-cart') }}" method="POST">
+                                @csrf
+                                <div class="input-group quantity mb-5" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" name="quantity" class="form-control form-control-sm text-center border-0" value="1">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="id" value="{{ $produk->id }}">
+                                <button type="submit" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                </button>
+                            </form>
                         </div>
+
                         <div class="col-lg-12">
                             <nav>
                                 <div class="nav nav-tabs mb-3">
@@ -167,5 +193,17 @@
 
     </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.btn-plus, .btn-minus').on('click', function(e) {
+                const isPositive = $(this).hasClass('btn-plus');
+                const input = $(this).closest('.quantity').find('input[name="quantity"]');
+                if (input.is('input')) {
+                    input.val(Math.max(1, parseInt(input.val()) + (isPositive ? 1 : -1)));
+                }
+            });
+        });
+    </script>
+
     <!-- Single Product End -->
 </x-frontend>

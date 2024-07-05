@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $data['list_produk'] = Produk::all();
+        $data['list_produk'] = Produk::with('carousels')->get();
         return view('Front.Shop.index', $data);
     }
     /**
@@ -43,9 +43,14 @@ class ShopController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show($variant)
     {
-        return view('front.shop.detail');
+        $produk = Produk::where('varian_produk', $variant)->first();
+        if (!$produk) {
+            return view('front.Error.404');
+        }
+
+        return view('front.shop.detail', compact('produk'));
     }
 
     /**

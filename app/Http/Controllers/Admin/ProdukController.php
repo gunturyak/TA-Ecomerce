@@ -14,10 +14,11 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $data ['list_produk'] = Produk::all();
+        $data['list_produk'] = Produk::all();
         return view('Admin.Produk.index', $data);
     }
-    public function data() {
+    public function data()
+    {
         return view('Admin.Produk.data');
     }
 
@@ -81,9 +82,9 @@ class ProdukController extends Controller
         $produk->save();
 
         if (request('gambar'))
-        $id_produk = $produk->id;
+            $id_produk = $produk->id;
         $produk = new ModelsProdukCarousel();
-        $produk->handleUploadImage($id_produk);
+        // $produk->handleUploadImage($id_produk);
 
         return redirect('Admin/Produk')->with('success', 'Data Berhasil di Edit');
     }

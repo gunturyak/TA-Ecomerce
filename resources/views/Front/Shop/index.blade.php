@@ -1,4 +1,10 @@
 <x-frontend>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <style>
         .fruite-img {
             position: relative;
@@ -70,57 +76,54 @@
         }
     </style>
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Shop</h1>
+        <h1 class="text-center text-white display-6">Shope</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop</li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+            <li class="breadcrumb-item active text-white">Shope</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
-
-
     <!-- Fruits Shop Start-->
     <div class="container-fluid fruite py-5">
-
-
         <div class="container py-5">
-            <h1 class="mb-4">Opang shop</h1>
-            <div class="row g-4">
-                <div class="col-lg-12">
-                    <div class="row g-4">
-                        <div class="col-xl-3">
-                            <div class="input-group w-100 mx-auto d-flex">
-                                <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                                <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            <h1 class="mb-4">Opang Shop</h1>
             <div class="row g-4">
 
                 <div class="col-lg-12 pt-5">
                     <div class="row g-4 justify-content-center">
                         @foreach($list_produk as $produk)
-                        <div class="col-md-6 col-lg-6 col-xl-4">
-                            <a href="{{url('shop-detail')}}">
+                        <div class="col-md-6 col-lg-3 col-xl-3">
+                            <a href="{{ url('shop-detail', $produk->varian_produk) }}">
                                 <div class="rounded position-relative fruite-item">
-                                    <div class="fruite-img">
-                                        <img src="{{asset('$produk->foto')}}" class="img-fluid rounded-top w-100" alt="">
+                                    <div id="carousel-{{ $produk->id }}" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @foreach($produk->carousels as $index => $carousel)
+                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                <img src="{{ asset($carousel->gambar) }}" class="img-fluid rounded-top w-100" alt="">
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-{{ $produk->id }}" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-{{ $produk->id }}" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
                                     </div>
 
                                     <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>{{$produk->varian_produk}}</h4>
+                                        <h4>{{ $produk->varian_produk }}</h4>
 
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-
-                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. {{$produk->harga_produk}}</p>
+                                            <p class="text-dark fs-5 fw-bold mb-0">Rp. {{ $produk->harga_produk }}</p>
                                             <form action="{{ route('add-to-cart') }}" method="POST">
                                                 @csrf
-                                                <input type="hidden" name="id" value="{{$produk->id}}">
-                                                <a href="" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                <input type="hidden" name="id" value="{{ $produk->id }}">
+                                                <a href="" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </a>
                                             </form>
                                         </div>
                                     </div>
@@ -128,6 +131,7 @@
                             </a>
                         </div>
                         @endforeach
+
 
                         <div class="col-md-6 col-lg-6 col-xl-4">
                             <div class="rounded position-relative fruite-item">
@@ -140,10 +144,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
     <!-- Fruits Shop End-->
 

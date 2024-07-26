@@ -9,12 +9,12 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Products</th>
+                                        <th scope="col">Produk</th>
                                         <th scope="col">Varian</th>
                                         <th scope="col">Harga</th>
-                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Jumlah</th>
                                         <th scope="col">Total</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Batal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,33 +62,34 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="mt-5">
-                            <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-                            <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
-                        </div>
+
                         <div class="row g-4 justify-content-end">
                             <div class="col-8"></div>
                             <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
                                 <div class="bg-light rounded">
                                     <div class="p-4">
-                                        <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
+                                        <h1 class="display-6 mb-4">Total <span class="fw-normal">Belanja</span></h1>
                                         <div class="d-flex justify-content-between mb-4">
                                             <h5 class="mb-0 me-4">Subtotal:</h5>
                                             <p class="mb-0 subtotal">Rp. {{ $subtotal }}</p>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <h5 class="mb-0 me-4">Shipping</h5>
+                                            <h5 class="mb-0 me-4">Biaya Kirim</h5>
                                             <div class="">
-                                                <p class="mb-0">Flat rate: Rp. 2.500</p>
+                                                <p class="mb-0"> Rp. 2.500</p>
                                             </div>
                                         </div>
-                                        <p class="mb-0 text-end">Shipping to Indonesia.</p>
+                                        <p class="mb-0 text-end">Pengiriman ke Indonesia.</p>
                                     </div>
                                     <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                                         <h5 class="mb-0 ps-4 me-4">Total</h5>
                                         <p class="mb-0 total">Rp. {{ $total }}</p>
                                     </div>
-                                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                                    @auth
+                                    <button id="proceed-checkout" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                                    @else
+                                    <a href="{{ url('Login') }}" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4">Masuk ke Pembayaran</a>
+                                    @endauth
                                 </div>
                             </div>
                         </div>
@@ -142,5 +143,25 @@
             $('.subtotal').text('Rp. ' + subtotal); // Update subtotal di bagian ringkasan
             $('.total').text('Rp. ' + total); // Update total keseluruhan di bagian ringkasan
         }
+
+        // Event handler untuk tombol proceed checkout
+        $('#proceed-checkout').click(function(e) {
+            e.preventDefault();
+
+            var items = [];
+            $('.table tbody tr').each(function() {
+                var name = $(this).find('td:nth-child(2) p').text().trim();
+                var price = parseFloat($(this).find('td:nth-child(3) p').text().replace('Rp. ', '').replace(',', ''));
+                var qty = parseInt($(this).find('.quantity-input').val());
+                items.push(name + ' - ' + qty + ' x Rp. ' + price);
+            });
+
+            var subtotal = $('.subtotal').text().replace('Rp. ', '').replace(',', '');
+            var total = $('.total').text().replace('Rp. ', '').replace(',', '');
+            var message = "Halo, saya ingin memesan produk opang varian:\n\n" + items.join('\n') + "\n\nSubtotal: Rp. " + subtotal + "\nTotal: Rp. " + total;
+
+            var whatsappUrl = "https://api.whatsapp.com/send?phone=6289504763161&text=" + encodeURIComponent(message);
+            window.location.href = whatsappUrl;
+        });
     });
 </script>

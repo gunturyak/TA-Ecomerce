@@ -20,12 +20,12 @@
     <!-- Modal Search End -->
 
     <!-- Hero Start -->
-    <div class="container-fluid py-5 mb-5 hero-header">
+    <div class="container-fluid  hero-header" style="background-image: url(./front/gambar/pang.jpg); height: 80vh">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-md-12 col-lg-7">
 
-                    <h1 class="mb-5 display-3 text-primary center-text">Selamat Datang Di Produk Opang</h1>
+                    <h1 class="mb-5 display-3" style="color: #fff;">Selamat Datang Di Produk Opang</h1>
 
                 </div>
                 <div class="col-md-12 col-lg-5">
@@ -46,69 +46,19 @@
             </div>
             <!-- Hero End -->
 
-            <!-- Fruits Shop Start-->
-            <div class="container-fluid fruite py-5">
+            <div class="container-fluid fruite ">
                 <div class="container">
                     <div class="tab-class">
-                        <div class="row g-4">
+                        <div class="row">
                             <div class="col-lg-4">
-                                <h1>
+                                <h1 style="color: white;">
                                     PRODUK OPANG
                                 </h1>
                             </div>
-
-                        </div>
-                        <div class="tab-content">
-
-                            <div id="tab-3" class="tab-pane fade show p-0">
-                                <div class="row g-4">
-                                    <div class="col-lg-12">
-                                        <div class="row g-4">
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item">
-                                                    <div class="fruite-img">
-                                                        <img src="{{url('/')}}/front/img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                        <h4>Oranges</h4>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item">
-                                                    <div class="fruite-img">
-                                                        <img src="{{url('/')}}/front/img/fruite-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                        <h4>Apple</h4>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Fruits Shop End-->
-
-            <!-- Featurs Start -->
-
             <!-- <div class="container-fluid service">
                 <div class="container">
                     <div class="row g-4 justify-content-center">
@@ -157,7 +107,7 @@
             <!-- Featurs End -->
         </div>
     </div>
-    <div class="section" style="">
+    <div class="section">
         <div class="section-body">
             <div class="product-catalog grid">
                 <div class="p-3 " style="background-color: #43AA34;color:#fff;">
@@ -173,10 +123,10 @@
                             <h1>OPANG Original Chips</h1>
                             <div class="content">
                                 <p>
-                                    Made only from quality ingredients, the crunchy and delicious KUSUKA Cassava Chips are a favorite for everyone who tries! Available in various flavors
+                                    Di buat dari bahan ubi dan udang, keripik opang yang renyah dan lezat menjadi favorit semua orang yang mencobanya! tersedia beberapa varian rasa
                                 </p>
                                 <div class="mt-6 lg:mt-8">
-                                    <a href="{{ route('shop-detail', ['produk' => 'Original']) }}" class="btn btn-primary">Detail Product</a>
+                                    <a href="{{ route('shop-detail', ['produk' => 'Original']) }}" class="btn btn-primary">Detail Produk</a>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +134,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-md-6">
-                        <div class="p-3" style="background-color: #F7BE28;color:#fff;">
+                        <div class="p-3" style="background-color: #ffad32;color:#fff;">
                             <div class="media-absolute">
                                 <img class=" ls-is-cached lazyloaded" data-src="/media/2023/09/27/d514b291-841c-4176-ba52-eb7c4548ac83.png" alt="" src="/media/2023/09/27/d514b291-841c-4176-ba52-eb7c4548ac83.png">
                             </div>
@@ -197,10 +147,11 @@
                                     <h3>OPANG Jagung Bakar Chips</h3>
                                     <div class="content">
                                         <p>
-                                            Gives you an experience of Indonesian chips, emping, made from gnetum gnemon known as melinjo. To create a tasty emping, we choose a high quality meli
+                                            Belanja Hemat, Kualitas Terjamin!
+                                            Dapatkan penawaran menarik setiap hari di toko produk Opang. Belanja lebih hemat dengan harga spesial dan promo menarik
                                         </p>
                                         <div class="mt-6 lg:mt-8">
-                                            <a href="{{ route('shop-detail', ['produk' => 'Jagun Bakar']) }}" class="btn btn-primary">Detail Product</a>
+                                            <a href="{{ route('shop-detail', ['produk' => 'Jagung Bakar']) }}" class="btn btn-primary">Detail Produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -221,10 +172,10 @@
                                     <h3>OPANG Balado Chips</h3>
                                     <div class="content">
                                         <p>
-                                            Are you sure can handle our hotness? KUSUKA Topping delivers you a bold of spiciness, lingering a hint of
+                                            Jangan tunggu lagi, rasakan manfaat luar biasa dari Opang sekarang juga! Kunjungi website kami atau toko terdekat untuk pembelian.
                                         </p>
                                         <div class="mt-6 lg:mt-8">
-                                            <a href="{{ route('shop-detail', ['produk' => 'Balado']) }}" class="btn btn-primary">Detail Product</a>
+                                            <a href="{{ route('shop-detail', ['produk' => 'Balado']) }}" class="btn btn-primary">Detail Produk</a>
                                         </div>
                                     </div>
                                 </div>

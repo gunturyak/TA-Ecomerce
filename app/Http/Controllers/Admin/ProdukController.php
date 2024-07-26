@@ -84,7 +84,7 @@ class ProdukController extends Controller
         if (request('gambar'))
             $id_produk = $produk->id;
         $produk = new ModelsProdukCarousel();
-        // $produk->handleUploadImage($id_produk);
+        $produk->handleUploadImage($id_produk);
 
         return redirect('Admin/Produk')->with('success', 'Data Berhasil di Edit');
     }

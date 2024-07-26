@@ -4,11 +4,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Shope Detail</h1>
+        <h1 class="text-center text-white display-6">Toko</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{url('shop')}}">Shope</a></li>
-            <li class="breadcrumb-item active text-white">Shope Detail</li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="{{url('shop')}}">Belanja</a></li>
+            <li class="breadcrumb-item active text-white">Ditail Produk</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
@@ -48,52 +48,106 @@
                                 {{ session('success') }}
                             </div>
                             @endif
+                            <div class="px-2">
+                                <div class="row g-4">
+                                    <div class="col-12 mb-3">
+                                        <div class="row bg-light align-items-center text-center justify-content-center py-2">
+                                            <div class="col-6">
+                                                <p class="mb-0">Berat</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="mb-0">100 gr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-center align-items-center justify-content-center py-2">
+                                            <div class="col-6">
+                                                <p class="mb-0">Rasa</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="mb-0">Original,Balado Dan Jagung bakar</p>
+                                            </div>
+                                        </div>
+                                        <div class="row bg-light text-center align-items-center justify-content-center py-2">
+                                            <div class="col-6">
+
+                                            </div>
+                                            <div class="col-6">
+
+                                            </div>
+                                        </div>
+                                        <div class="row text-center align-items-center justify-content-center py-2">
+                                            <div class="col-6">
+                                                <p class="mb-0">Harga</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="mb-0">Rp.16000</p>
+                                            </div>
+                                        </div>
+                                        <div class="row bg-light text-center align-items-center justify-content-center py-2">
+                                            <div class="col-6">
+                                                <p class="mb-0">Min Berat</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="mb-0">50 gr</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
                             <form action="{{ route('add-to-cart') }}" method="POST">
                                 @csrf
-                                <div class="input-group quantity mb-5" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
+                                <div class="row">
+                                    <div class="col-md-2 mt-2">
+
+                                        <div class="input-group quantity mb-3" style="width: 100px;">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" name="quantity" class="form-control form-control-sm text-center border-0" value="1">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <input type="text" name="quantity" class="form-control form-control-sm text-center border-0" value="1">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                            <i class="fa fa-plus"></i>
+                                    <div class="col-md-10">
+
+                                        <input type="hidden" name="id" value="{{ $produk->id }}">
+                                        <button type="submit" class="btn border border-secondary rounded-pill py-2 mb-4 text-primary">
+                                            <i class="fa fa-shopping-bag me-2 text-primary"></i> Masukan Ke Keranjang
                                         </button>
                                     </div>
                                 </div>
-                                <input type="hidden" name="id" value="{{ $produk->id }}">
-                                <button type="submit" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
-                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
-                                </button>
                             </form>
                         </div>
 
                         <div class="col-lg-12">
                             <nav>
                                 <div class="nav nav-tabs mb-3">
-                                    <button class="nav-link active border-white border-bottom-0" type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" aria-controls="nav-about" aria-selected="true">Description</button>
+                                    <button class="nav-link active border-white border-bottom-0" type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" aria-controls="nav-about" aria-selected="true">Keterangan Produk</button>
 
                                 </div>
                             </nav>
                             <div class="tab-content mb-5">
                                 <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                                    <p>Opak udang merupakan makanan yang berasal dari campuran ubi dan udang yang digiling dan di bumbui dengan bahan yang lain,dan memiliki beberapa keunggulan
-                                        Renyah dan Lezat: Proses pengolahan yang hati-hati memastikan setiap potongan opak memiliki tekstur yang renyah dan rasa udang yang gurih.
-                                        Bahan Alami: Dibuat dari udang segar dan ubi berkualitas tanpa tambahan pengawet dan pewarna buatan, menjadikannya pilihan camilan yang sehat dan aman.
-                                        Kaya Protein: Sumber protein yang baik dari udang, memberikan nilai gizi tambahan di setiap gigitannya.
-                                        Praktis dan Higienis: Dikemas dalam bungkus yang praktis dan higienis, mudah dibawa ke mana saja dan dinikmati kapan saja.
-                                        Harga Terjangkau: Dengan harga hanya Rp. 16.000 per bungkus, Opak Udang adalah pilihan camilan yang lezat dan ekonomis.
-
+                                    <p>
+                                        Nikmati keajaiban rasa dengan Opak Udang! Camilan istimewa yang terbuat dari campuran ubi dan udang segar, diolah dengan bumbu rahasia yang memanjakan lidah Anda.
+                                        Setiap potongan Opak Udang diolah dengan cermat untuk memastikan tekstur yang renyah dan rasa udang yang gurih.
+                                        Dibuat dari bahan alami tanpa pengawet dan pewarna buatan, Opak Udang sehat dan aman untuk dinikmati setiap hari.
+                                        Kandungan protein dari udang memberikan nilai gizi tambahan di setiap gigitan.
+                                        Dikemas dalam bungkus praktis dan higienis, Opak Udang mudah dibawa ke mana saja dan dinikmati kapan saja.
+                                        Dengan harga hanya Rp. 16.000 per bungkus, Opak Udang adalah pilihan camilan yang lezat dan ekonomis untuk semua kalangan! Segera dapatkan di toko terdekat atau pesan online sekarang juga!
                                     </p>
-
                                     <div class="px-2">
                                         <div class="row g-4">
                                             <div class="col-6">
                                                 <div class="row bg-light align-items-center text-center justify-content-center py-2">
                                                     <div class="col-6">
-                                                        <p class="mb-0">Weight</p>
+                                                        <p class="mb-0">Berat</p>
                                                     </div>
                                                     <div class="col-6">
                                                         <p class="mb-0">100 gr</p>
@@ -109,26 +163,18 @@
                                                 </div>
                                                 <div class="row bg-light text-center align-items-center justify-content-center py-2">
                                                     <div class="col-6">
-                                                        <p class="mb-0">Quality</p>
+                                                        <p class="mb-0">Harga</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p class="mb-0">Organic</p>
+                                                        <p class="mb-0">RP. 16.000</p>
                                                     </div>
                                                 </div>
                                                 <div class="row text-center align-items-center justify-content-center py-2">
                                                     <div class="col-6">
-                                                        <p class="mb-0">Сheck</p>
+                                                        <p class="mb-0">Min Berat</p>
                                                     </div>
                                                     <div class="col-6">
-                                                        <p class="mb-0">Healthy</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row bg-light text-center align-items-center justify-content-center py-2">
-                                                    <div class="col-6">
-                                                        <p class="mb-0">Min Weight</p>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <p class="mb-0">250 Kg</p>
+                                                        <p class="mb-0">50 gr</p>
                                                     </div>
                                                 </div>
                                             </div>

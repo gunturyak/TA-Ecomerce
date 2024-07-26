@@ -1,11 +1,17 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\ChartController;
 use App\Http\Controllers\Front\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('Login', [AuthController::class, 'showLogin']);
+Route::post('Login', [AuthController::class, 'loginProcess'])->name('ProsesLogin');
+Route::get('Register', [AuthController::class, 'register']);
+Route::post('Register', [AuthController::class, 'registerProcess'])->name('ProsesRegister');
+Route::get('Logout', [AuthController::class, 'logout']);
 
 
 Route::prefix('Admin')->group(function () {

@@ -17,35 +17,35 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="" class="control-label mt-3">NAMA PRODUK</label>
-                                                <input type="text" class="form-control" name="nama_produk" value="{{ $produk->nama_produk }}">
+                                                <input type="text" class="form-control" name="nama_produk" value="{{ $produk->nama_produk }}" required>
                                                 @error('nama_produk')
                                                 <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
                                                 @enderror
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="" class="control-label mt-3">UPLOAD GAMBAR</label>
-                                                <input type="file" name="gambar[]" class="form-control mb-3" multiple>
+                                                <input type="file" name="gambar[]" class="form-control mb-3" multiple required>
                                                 @error('gambar')
                                                 <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
                                                 @enderror
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="" class="control-label mt-3">VARIAN</label>
-                                                <input type="text" class="form-control" name="varian_produk" value="{{ $produk->varian_produk }}">
+                                                <input type="text" class="form-control" name="varian_produk" value="{{ $produk->varian_produk }}" required>
                                                 @error('varian_produk')
                                                 <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
                                                 @enderror
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="" class="control-label mt-3">HARGA</label>
-                                                <input type="number" class="form-control" name="harga_produk" value="{{ $produk->harga_produk }}">
+                                                <input type="number" class="form-control" name="harga_produk" value="{{ $produk->harga_produk }}" required>
                                                 @error('harga_produk')
                                                 <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
                                                 @enderror
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="" class="control-label mt-3">STOK</label>
-                                                <input type="number" class="form-control" name="stok_produk" value="{{ $produk->stok_produk }}">
+                                                <input type="number" class="form-control" name="stok_produk" value="{{ $produk->stok_produk }}" required>
                                                 @error('stok_produk')
                                                 <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
                                                 @enderror

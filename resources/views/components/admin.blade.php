@@ -32,6 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
+        <!--- Notif --->
         <!-- Header -->
         <x-template.admin.header />
 
@@ -40,6 +41,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+        <x-utils.notif/>
+
             <!-- Content Header (Page header) -->
             {{ $slot }}
             <!-- /.content -->

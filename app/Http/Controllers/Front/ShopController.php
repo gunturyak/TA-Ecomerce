@@ -13,17 +13,7 @@ class ShopController extends Controller
         $data['list_produk'] = Produk::with('carousels')->get();
         return view('Front.Shop.index', $data);
     }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         $produk = new Produk();

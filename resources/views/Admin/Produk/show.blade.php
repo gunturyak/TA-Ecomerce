@@ -78,5 +78,4 @@
             </div>
         </div>
     </section>
-    </div>
 </x-admin>

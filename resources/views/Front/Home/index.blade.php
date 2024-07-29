@@ -197,13 +197,13 @@
         .media-image {
             flex: 0 0 auto;
             margin-right: 20px;
-            height: 65vh;
+            height: 75vh;
         }
 
         .media-image-bottom {
             flex: 0 0 auto;
             margin-right: 20px;
-            height: 60vh;
+            height: 70vh;
         }
 
         .media-body {

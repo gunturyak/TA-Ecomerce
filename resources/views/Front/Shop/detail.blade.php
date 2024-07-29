@@ -68,12 +68,6 @@
                                             </div>
                                         </div>
                                         <div class="row bg-light text-center align-items-center justify-content-center py-2">
-                                            <div class="col-6">
-
-                                            </div>
-                                            <div class="col-6">
-
-                                            </div>
                                         </div>
                                         <div class="row text-center align-items-center justify-content-center py-2">
                                             <div class="col-6">

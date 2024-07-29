@@ -22,17 +22,11 @@ class ProdukController extends Controller
         return view('Admin.Produk.data');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('Admin.Produk.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $produk = new Produk();
@@ -50,27 +44,18 @@ class ProdukController extends Controller
         return redirect('Admin/Produk')->with('success', 'Data Berhasil di Tambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($produk)
     {
         $produk = Produk::find($produk);
         return view('Admin.Produk.Show', compact('produk'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($produk)
     {
         $produk = Produk::find($produk);
         return view('Admin.Produk.edit', compact('produk'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $produk = Produk::find($id);
@@ -84,14 +69,11 @@ class ProdukController extends Controller
         if (request('gambar'))
             $id_produk = $produk->id;
         $produk = new ModelsProdukCarousel();
-        $produk->handleUploadImage($id_produk);
+        if(request ('handleUploadImage')) $produk->handleUploadImage($id_produk);
 
         return redirect('Admin/Produk')->with('success', 'Data Berhasil di Edit');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     function destroy($id)
     {
         $produk = Produk::find($id);

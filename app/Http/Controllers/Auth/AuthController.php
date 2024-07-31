@@ -11,9 +11,7 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function showLogin()
     {
         return view('Auth.login');
@@ -36,9 +34,6 @@ class AuthController extends Controller
         return view('Auth.Register');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function registerProcess(Request $request)
     {
         Session::flash('nama', $request->nama);

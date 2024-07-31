@@ -30,9 +30,6 @@ class ShopController extends Controller
             ->with('success', 'Produk berhasil ditambahkan dan siap ditambahkan ke keranjang!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($variant)
     {
         $produk = Produk::where('varian_produk', $variant)->first();
@@ -43,27 +40,4 @@ class ShopController extends Controller
         return view('front.shop.detail', compact('produk'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

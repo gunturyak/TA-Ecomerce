@@ -24,7 +24,7 @@ class AuthController extends Controller
             if ($user->role == 'Admin') return redirect('Admin/Dashboard')->with('success', 'Login Berhasil');
             if ($user->role == 'Pembeli') return redirect('/')->with('success', 'Login Berhasil');
         } else {
-            return back()->with('success', 'Login Gagal, Silahlan cek email dan password anda');
+            return back()->withErrors('danger', 'Login Gagal, Silahlan cek email dan password anda');
         }
     }
 

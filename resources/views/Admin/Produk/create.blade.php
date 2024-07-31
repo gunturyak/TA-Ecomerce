@@ -36,11 +36,6 @@
                                                 @enderror
                                             </div>
                                             <div class="col-md-6">
-                                                {{-- <label for="" class="control-label mt-3">VARIAN</label>
-                                                <input type="text" class="form-control" name="varian_produk" value="" required>
-                                                @error('varian_produk')
-                                                <p class="text-danger" style="font-size: 12px">* {{ $message }}</p style="font-size: 12px">
-                                                @enderror --}}
                                                 <label for="" class="control-label mt-3">VARIAN</label>
                                                 <select class="form-control" name="varian_produk">
                                                     <option>--Pilih varian--</option>

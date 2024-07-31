@@ -9,20 +9,16 @@
 <style>
     .small-text {
         font-size: 90%;
-        /* Sesuaikan ukuran teks sesuai kebutuhan */
     }
 
     .alert {
         padding: 5px 15px;
-        /* Sesuaikan ukuran padding sesuai kebutuhan */
         margin-bottom: 10px;
-        /* Sesuaikan ukuran margin-bottom sesuai kebutuhan */
     }
 
     .custom-success-box,
     .custom-warning-box,
     .custom-danger-box {
         padding: 10px;
-        /* Sesuaikan ukuran padding sesuai kebutuhan */
     }
 </style>

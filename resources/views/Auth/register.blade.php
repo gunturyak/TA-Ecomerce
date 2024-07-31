@@ -214,10 +214,7 @@
                 <p> Sudah Punya Akun?</p>
                 <p class="register"><a href="{{ url('Login') }}">Masuk</a></p>
             </div>
-            <!-- <div class="fb"><i class="fab fa-facebook"></i> Facebook</div> -->
         </div>
     </form>
-
 </body>
-
 </html>

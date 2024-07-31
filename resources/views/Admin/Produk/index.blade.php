@@ -49,7 +49,6 @@
                                                 <a href="{{ url('Admin/Produk/' . $produk->id . '/edit') }}" class="btn btn-warning btn-sm">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                {{-- <x-button.delete id="{{ $produk->id }}" /> --}}
                                                 <form action="{{ url('Admin/Produk', $produk->id) }}" method="post" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                                     @csrf
                                                     @method('delete')
